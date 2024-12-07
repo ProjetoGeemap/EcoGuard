@@ -21,7 +21,7 @@ def Login(request):
             
             return render(request,'first_page_after_login/inicio.html',locals())
         else:
-            return HttpResponse('usuario n autenticado    ')
+            return render (request,'login/login.html',locals())
     
 
 
@@ -59,7 +59,7 @@ def Cadastro(request):
         
         user = User.objects.create_user(username=username,email=email,password=password)
         user.save()
-        return HttpResponse("USuario cadastrado com sucesso")
+        return render (request,'login/login.html',locals())
     
     
     

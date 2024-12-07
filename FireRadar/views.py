@@ -8,14 +8,18 @@ def GenerateOfMapa(request):
     teste = str(request.user)
     userALLBD = User.objects.filter(username=str(request.user)).first()
     if userALLBD :
-            mapa = index.Initialization()
+            mapa,modis_tratado = index.Initialization()
+            tamanho_a = len(modis_tratado)
+           
             Mapa_Container = mapa._repr_html_()
             fig = terra_brasilis.DadosExtract()
             dados = terra_brasilis.Dados_Year()
             return render(request,'fire_radar.html',locals())
     elif teste !="AnonymousUser":
         if request.user.is_autenticated:
-            mapa = index.Initialization()
+            mapa,modis_tratado = index.Initialization()
+            tamanho_a = len(modis_tratado)
+           
             Mapa_Container = mapa._repr_html_()
             fig = terra_brasilis.DadosExtract()
             dados = terra_brasilis.Dados_Year()

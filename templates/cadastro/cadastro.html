@@ -1,43 +1,59 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro EcoGuard</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro EcoGuard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="{%static 'cadastro/style.css'%}">
+  <style>
+   
+    .card {
+      background: rgba(255, 255, 255, 0.85); /* Fundo transparente */
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        <div class="mb-3">
-            <label for="exampleInputEmail1" >Insira um nome de usuario</label>
-            <input type="text" class="form-control" id="username" name="username">
-          
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg col-md-6">
+      <div class="card-body">
+        <h3 class="text-center text-primary mb-4">
+          <i class="bi bi-person-plus"></i> Cadastro EcoGuard
+        </h3>
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="username" class="form-label">Nome de Usuário</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Insira seu nome de usuário" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Endereço de E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="email@exemplo.com" required>
+            <div class="form-text">Insira um e-mail que você usa frequentemente.</div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Cadastrar Novo Usuário</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Endereço de E-mail</label>
-
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-
-          <div id=" " class="form-text">Insira um email que você use de forma constante</div>
-        </div>
-
-
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-
-          <input type="password" class="form-control" id="password" name="password">
-        </div>
-
-
-        <button type="submit" class="btn btn-primary">Cadastrar Novo Usuario</button>
-      </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

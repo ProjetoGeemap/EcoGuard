@@ -17,7 +17,7 @@ def Initialization():
 
     #mapa.CreateOfMapa(juntandoDatasFrames)
     
-    return mapa.CreateOfMapa(MODISTratado)
+    return mapa.CreateOfMapa(MODISTratado),MODISTratado
 
 
 def Previsoes():

@@ -1,17 +1,33 @@
 {% extends 'base.html' %} {%load static%} {% block container %}
-<!-- {{Mapa_Container|safe}} -->
 
 <br />
 {% endblock %} {% block container4 %}
-<div style="margin-top: 100px; width: 100%">
 
-  <h1 class="display-4 text-center">Programa <b>Fire Radar</b></h1><br><br>
+<div style="margin-top: 100px; width: 100%">
+  {% if tamanho_a == 0 %}
+  <div class="alert alert-primary" role="alert">
+   Não Há Focos Incêndios Ativos no momento, uma boa Noticia :)
+  </div>
+{% endif %}
+  <h1 class="display-4 text-center">Programa <b>Fire Radar</b></h1>
+  <br /><br />
   <div class="alert alert-success" role="alert">
-    
+   
     <h4 class="alert-heading">Bem Vindo!</h4>
-    <p>Fire Radar é uma avançada ferramenta de monitoramento de focos de incêndios ativos, utilizando dados recebidos de satélites.O programa é focado principalmente no monitoramento do estado da Bahia, com planos futuros para expandir a cobertura e as funcionalidades para outras regiões e formas de atuação.</p>
-    <hr>
-    <p class="mb-0">Além de identificar incêndios em tempo real, fornecemos previsões precisas de possíveis pontos futuros de incêndio. Nossa base de dados inclui informações temporais detalhadas sobre focos de incêndio, mês a mês, desde 1994.</p>
+    <p>
+      Fire Radar é uma avançada ferramenta de monitoramento de focos de
+      incêndios ativos, utilizando dados recebidos de satélites.O programa é
+      focado principalmente no monitoramento do estado da Bahia, com planos
+      futuros para expandir a cobertura e as funcionalidades para outras regiões
+      e formas de atuação.
+    </p>
+    <hr />
+    <p class="mb-0">
+      Além de identificar incêndios em tempo real, fornecemos previsões precisas
+      de possíveis pontos futuros de incêndio. Nossa base de dados inclui
+      informações temporais detalhadas sobre focos de incêndio, mês a mês, desde
+      1994.
+    </p>
   </div>
   <div>
     <div>
@@ -29,7 +45,7 @@
               aria-controls="tab1"
               aria-selected="true"
             >
-             Focos de Incendios Ativos no momento 
+              Focos de Incendios Ativos no momento
             </button>
           </li>
           <li class="nav-item" role="presentation">
@@ -72,7 +88,7 @@
               aria-controls="tab4"
               aria-selected="false"
             >
-               Previsão de Incêndios Diarios
+              Previsão de Incêndios Diarios
             </button>
           </li>
         </ul>
@@ -174,21 +190,32 @@
             role="tabpanel"
             aria-labelledby="tab4-tab"
           >
-          <div class="card shadow-sm my-4">
-            <div class="card-body">
-              <h4 class="card-title text-center text-primary">A Importância das Previsões de Incêndios</h4>
-              <p class="card-text text-muted">
-                Prever incêndios florestais por meio de séries temporais é uma estratégia essencial para proteger vidas e ecossistemas. 
-                Ao analisar dados como clima e padrões históricos, essas previsões ajudam a antecipar riscos, permitindo a alocação 
-                eficiente de recursos e a preservação de áreas críticas.  
-                <strong>Com a tecnologia e a ciência, é possível transformar dados em ações que fazem a diferença.</strong>
-              </p>
-              <div class="text-center">
-                <a class="btn btn-primary" href="{% url 'Ferramenta_Previsao'%}" role="button">Mapa de Previsao de Incendios</a>
+            <div class="card shadow-sm my-4">
+              <div class="card-body">
+                <h4 class="card-title text-center text-primary">
+                  A Importância das Previsões de Incêndios
+                </h4>
+                <p class="card-text text-muted">
+                  Prever incêndios florestais por meio de séries temporais é uma
+                  estratégia essencial para proteger vidas e ecossistemas. Ao
+                  analisar dados como clima e padrões históricos, essas
+                  previsões ajudam a antecipar riscos, permitindo a alocação
+                  eficiente de recursos e a preservação de áreas críticas.
+                  <strong
+                    >Com a tecnologia e a ciência, é possível transformar dados
+                    em ações que fazem a diferença.</strong
+                  >
+                </p>
+                <div class="text-center">
+                  <a
+                    class="btn btn-primary"
+                    href="{% url 'Ferramenta_Previsao'%}"
+                    role="button"
+                    >Mapa de Previsao de Incendios</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
-            
           </div>
         </div>
       </div>
