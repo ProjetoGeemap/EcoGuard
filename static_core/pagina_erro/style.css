@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(ia.jpg) no-repeat center center;
+    background-size: contain;
+    background-color: #000000; /* Cor de fundo para espaços vazios */
+  }
+  .content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .bt{
+    border: 30px;
+    border-color: aqua;
+  }

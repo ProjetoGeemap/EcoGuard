@@ -1,0 +1,198 @@
+{% extends 'base.html' %} {%load static%} {% block container %}
+<!-- {{Mapa_Container|safe}} -->
+
+<br />
+{% endblock %} {% block container4 %}
+<div style="margin-top: 100px; width: 100%">
+
+  <h1 class="display-4 text-center">Programa <b>Fire Radar</b></h1><br><br>
+  <div class="alert alert-success" role="alert">
+    
+    <h4 class="alert-heading">Bem Vindo!</h4>
+    <p>Fire Radar é uma avançada ferramenta de monitoramento de focos de incêndios ativos, utilizando dados recebidos de satélites.O programa é focado principalmente no monitoramento do estado da Bahia, com planos futuros para expandir a cobertura e as funcionalidades para outras regiões e formas de atuação.</p>
+    <hr>
+    <p class="mb-0">Além de identificar incêndios em tempo real, fornecemos previsões precisas de possíveis pontos futuros de incêndio. Nossa base de dados inclui informações temporais detalhadas sobre focos de incêndio, mês a mês, desde 1994.</p>
+  </div>
+  <div>
+    <div>
+      <div class="container my-5">
+        <!-- Navegação de Tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="tab1-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab1"
+              type="button"
+              role="tab"
+              aria-controls="tab1"
+              aria-selected="true"
+            >
+             Focos de Incendios Ativos no momento 
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab3-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab3"
+              type="button"
+              role="tab"
+              aria-controls="tab3"
+              aria-selected="false"
+            >
+              Dados Historicos de focos de Incendio: Bahia
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab2-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab2"
+              type="button"
+              role="tab"
+              aria-controls="tab2"
+              aria-selected="false"
+            >
+              Comparativo entre Periodos
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab4-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab4"
+              type="button"
+              role="tab"
+              aria-controls="tab4"
+              aria-selected="false"
+            >
+               Previsão de Incêndios Diarios
+            </button>
+          </li>
+        </ul>
+
+        <!-- Conteúdo das Tabs -->
+        <div class="tab-content mt-3" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="tab1"
+            role="tabpanel"
+            aria-labelledby="tab1-tab"
+          >
+            {{Mapa_Container|safe}}
+          </div>
+          <div
+            class="tab-pane fade"
+            id="tab2"
+            role="tabpanel"
+            aria-labelledby="tab2-tab"
+          >
+            <div>
+              <iframe
+                src="https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado//grafico_comparativo_primeiro_semestre_estado_bahia.html"
+                height="500"
+                style="border: none; width: 90vw; overflow: hidden"
+              ></iframe>
+              <iframe
+                src="https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado//grafico_comparativo_segundo_semestre_estado_bahia.html"
+                height="500"
+                style="border: none; width: 90vw; overflow: hidden"
+              ></iframe>
+            </div>
+            <div>
+              <br />
+              <h2>Comparativo com o mesmo Mês do ano anterior</h2>
+              <br />
+              <iframe
+                src="https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado/grafico_historico_mes_atual_estado_bahia.html"
+                frameborder="0"
+                width="100%"
+              ></iframe>
+              <div></div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="tab3"
+            role="tabpanel"
+            aria-labelledby="tab3-tab"
+          >
+            <div>
+              <h2>Dados Historicos de <b>Focos de incendio Bahia</b></h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Ano</th>
+                    <th scope="col">Janeiro</th>
+                    <th scope="col">Fevereiro</th>
+                    <th scope="col">Março</th>
+                    <th scope="col">Maio</th>
+                    <th scope="col">Abril</th>
+                    <th scope="col">Junho</th>
+                    <th scope="col">Julho</th>
+                    <th scope="col">Agosto</th>
+                    <th scope="col">Setempo</th>
+                    <th scope="col">Outubro</th>
+                    <th scope="col">Novembro</th>
+                    <th scope="col">Dezembro</th>
+                    <th scope="col"><b>TOTAL</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for item in dados %}
+                  <tr>
+                    <th scope="row">{{item.Ano}}</th>
+                    <td>{{item.Janeiro}}</td>
+                    <td>{{item.Fevereiro}}</td>
+                    <td>{{item.Março}}</td>
+                    <td>{{item.Abril}}</td>
+                    <td>{{item.Maio}}</td>
+                    <td>{{item.Junho}}</td>
+                    <td>{{item.Julho}}</td>
+                    <td>{{item.Agosto}}</td>
+                    <td>{{item.Setembro}}</td>
+                    <td>{{item.Outubro}}</td>
+                    <td>{{item.Novembro}}</td>
+                    <td>{{item.Dezembro}}</td>
+                    <td>{{item.Total}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="tab4"
+            role="tabpanel"
+            aria-labelledby="tab4-tab"
+          >
+          <div class="card shadow-sm my-4">
+            <div class="card-body">
+              <h4 class="card-title text-center text-primary">A Importância das Previsões de Incêndios</h4>
+              <p class="card-text text-muted">
+                Prever incêndios florestais por meio de séries temporais é uma estratégia essencial para proteger vidas e ecossistemas. 
+                Ao analisar dados como clima e padrões históricos, essas previsões ajudam a antecipar riscos, permitindo a alocação 
+                eficiente de recursos e a preservação de áreas críticas.  
+                <strong>Com a tecnologia e a ciência, é possível transformar dados em ações que fazem a diferença.</strong>
+              </p>
+              <div class="text-center">
+                <a class="btn btn-primary" href="{% url 'Ferramenta_Previsao'%}" role="button">Mapa de Previsao de Incendios</a>
+              </div>
+            </div>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>

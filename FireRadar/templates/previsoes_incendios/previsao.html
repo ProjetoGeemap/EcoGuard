@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+
+{% block container2 %} 
+<br><br><br><br><br>
+<h2 class="text-center">Previsão de focos de incendio para o hoje</h2>
+<br>
+
+{{cont|safe}}
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">DateTime</th>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">FRP</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in dados %}
+    <tr>
+      <th scope="row">
+        {{ forloop.counter }} <span> </span> <i class="bi bi-pin-map"></i>
+      </th>
+      <td>{{item.time}} <span>(dados base)</span></td>
+      <td>{{item.lat}}</td>
+      <td>{{item.lon}}</td>
+      <td>{{item.rf}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

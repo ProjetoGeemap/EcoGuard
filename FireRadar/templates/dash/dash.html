@@ -1,0 +1,228 @@
+{% extends 'base.html' %} {% block container4 %}
+<div style="margin-top: 100px">
+  
+
+  <div>
+    <div>
+      <div class="container my-5">
+        <!-- Navegação de Tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="tab1-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab1"
+              type="button"
+              role="tab"
+              aria-controls="tab1"
+              aria-selected="true"
+            >
+              INDEX
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab3-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab3"
+              type="button"
+              role="tab"
+              aria-controls="tab3"
+              aria-selected="false"
+            >
+            Dados Historicos de focos de Incendio: Bahia 
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab2-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab2"
+              type="button"
+              role="tab"
+              aria-controls="tab2"
+              aria-selected="false"
+            >
+              Comparativo entre Periodos
+            </button>
+          </li>
+          
+
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab4-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab4"
+              type="button"
+              role="tab"
+              aria-controls="tab4"
+              aria-selected="false"
+            >
+              Opção 4
+            </button>
+          </li>
+        </ul>
+
+        <!-- Conteúdo das Tabs -->
+        <div class="tab-content mt-3" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="tab1"
+            role="tabpanel"
+            aria-labelledby="tab1-tab"
+          >
+         
+          </div>
+          <div
+            class="tab-pane fade"
+            id="tab2"
+            role="tabpanel"
+            aria-labelledby="tab2-tab"
+          >
+            <div>
+              <br />
+              <h2>Comparativo com o mesmo Mês do ano anterior</h2>
+              <br />
+              <iframe
+                src="https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado/grafico_historico_mes_atual_estado_bahia.html"
+                frameborder="0"
+                width="100%"
+              ></iframe>
+              <div>
+                <h2>Dados Focos de Incendio de 2024</h2>
+                <div>
+                  <p>
+                    <a
+                      class="btn btn-secondary"
+                      data-bs-toggle="collapse"
+                      href="#multiCollapseExample1"
+                      role="button"
+                      aria-expanded="true"
+                      aria-controls="multiCollapseExample1"
+                      >Primeiro Semestre</a
+                    >
+                    <button
+                      class="btn btn-secondary"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#multiCollapseExample2"
+                      aria-expanded="true"
+                      aria-controls="multiCollapseExample2"
+                    >
+                      Segundo Semestre
+                    </button>
+                  
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <div
+                        class="collapse multi-collapse"
+                        id="multiCollapseExample1"
+                      >
+                        <div class="card card-body">
+                          Primeiro Semestres
+                          <div class="mb-4">
+                            <h2>Primeiro Semestre</h2>
+                            <iframe
+                              src="https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado//grafico_comparativo_primeiro_semestre_estado_bahia.html"
+                              height="500"
+                              style="border: none; width: 100vw"
+                            ></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div
+                        class="collapse multi-collapse"
+                        id="multiCollapseExample2"
+                      >
+                        <div class="card card-body">
+                          <div class="mb-4">
+                            <h2>Segundo Semestre</h2>
+                            <iframe
+                              src="https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado//grafico_comparativo_segundo_semestre_estado_bahia.html"
+                              height="500"
+                              style="border: none; width: 100vw"
+                            ></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="tab3"
+            role="tabpanel"
+            aria-labelledby="tab3-tab"
+          >
+          <div>
+            <h2>Dados Historicos de <b>Focos de incendio Bahia</b></h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Ano</th>
+                  <th scope="col">Janeiro</th>
+                  <th scope="col">Fevereiro</th>
+                  <th scope="col">Março</th>
+                  <th scope="col">Maio</th>
+                  <th scope="col">Abril</th>
+                  <th scope="col">Junho</th>
+                  <th scope="col">Julho</th>
+                  <th scope="col">Agosto</th>
+                  <th scope="col">Setempo</th>
+                  <th scope="col">Outubro</th>
+                  <th scope="col">Novembro</th>
+                  <th scope="col">Dezembro</th>
+                  <th scope="col"><b>TOTAL</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in dados %}
+                <tr>
+                  <th scope="row">{{item.Ano}}</th>
+                  <td>{{item.Janeiro}}</td>
+                  <td>{{item.Fevereiro}}</td>
+                  <td>{{item.Março}}</td>
+                  <td>{{item.Abril}}</td>
+                  <td>{{item.Maio}}</td>
+                  <td>{{item.Junho}}</td>
+                  <td>{{item.Julho}}</td>
+                  <td>{{item.Agosto}}</td>
+                  <td>{{item.Setembro}}</td>
+                  <td>{{item.Outubro}}</td>
+                  <td>{{item.Novembro}}</td>
+                  <td>{{item.Dezembro}}</td>
+                  <td>{{item.Total}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          </div>
+
+
+          <div
+            class="tab-pane fade "
+            id="tab4"
+            role="tabpanel"
+            aria-labelledby="tab4-tab"
+          >
+            <h3>Conteúdo da Opção 1</h3>
+            <p>Informações detalhadas sobre a Opção 12.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>

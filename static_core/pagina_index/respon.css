@@ -1,0 +1,165 @@
+@media screen and (max-width: 415px) {
+  body {
+    width: 100%;
+  }
+  .main {
+    flex-direction: column;
+  }
+  .menu {
+    margin-left: 30px;
+  }
+  .menu-item {
+    margin-left: 10px;
+  }
+  .icones {
+    flex-direction: column;
+    text-align: center;
+  }
+  .icon-x {
+    margin-left: 70px;
+  }
+  .icon-x > img {
+    width: 150px;
+    height: 150px;
+  }
+  .icon-x > p {
+    margin-bottom: 80px;
+    font-size: 20px;
+  }
+
+  .div-p {
+    flex-direction: column;
+    width: 100%;
+  }
+  .div-p > p {
+    width: 100%;
+  }
+
+  .div-p > img {
+      margin-left:100px;
+    text-align: center;
+    width: 250px;
+    height: 300px;
+  }
+
+  .menu-icone-2{
+flex-direction: column;
+text-align: center;
+  }
+  .icone-2 > p{
+      width: 100%;
+      margin-left:70px;
+    margin-bottom: 90px;
+    font-size: 20px;
+  }
+
+  .icone-2 > img{
+    margin-left:100px;
+    width: 150px;
+    height: 150px;
+  }
+
+.renovavel{
+    flex-direction:column;
+    text-align: center;
+}
+
+.renovavel-icon >p{
+    width: 100%;
+    margin-left:70px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+  .renovavel-icon > img{
+    margin-left:100px;
+    width: 150px;
+    height: 150px;
+  }
+  .title-matriz{
+    margin-top: 20px;
+  }
+}
+
+
+
+@media screen and (max-width: 376px) {
+    body {
+      width: 100%;
+    }
+    .main {
+      flex-direction: column;
+    }
+    .menu {
+      margin-left: 50px;
+    }
+    .menu-item {
+      margin-left: 10px;
+    }
+    .icones {
+      flex-direction: column;
+      text-align: center;
+    }
+    .icon-x {
+      margin-left: 50px;
+    }
+    .icon-x > img {
+      width: 150px;
+      height: 150px;
+    }
+    .icon-x > p {
+      margin-bottom: 80px;
+      font-size: 20px;
+    }
+  
+    .div-p {
+      flex-direction: column;
+      width: 100%;
+    }
+    .div-p > p {
+      width: 100%;
+    }
+  
+    .div-p > img {
+        margin-left:100px;
+      text-align: center;
+      width: 250px;
+      height: 300px;
+    }
+  
+    .menu-icone-2{
+  flex-direction: column;
+  text-align: center;
+    }
+    .icone-2 > p{
+        width: 100%;
+        margin-left:70px;
+      margin-bottom: 90px;
+      font-size: 20px;
+    }
+  
+    .icone-2 > img{
+      margin-left:100px;
+      width: 150px;
+      height: 150px;
+    }
+  
+  .renovavel{
+      flex-direction:column;
+      text-align: center;
+  }
+  
+  .renovavel-icon >p{
+      width: 100%;
+      margin-left:70px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+    .renovavel-icon > img{
+      margin-left:100px;
+      width: 150px;
+      height: 150px;
+    }
+    .title-matriz{
+      margin-top: 20px;
+    }
+  }

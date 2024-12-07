@@ -1,0 +1,28 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greenpeace Login</title>
+	<link rel="stylesheet" href="{% static 'login/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'page_inicial/minhasFontes.css' %}">
+</head>
+<body>
+	<div class="login-container">
+		<h1 class="titulo">EcoGuard Login</h1>
+		<div class="containerr">
+        <form method="post">
+			{% csrf_token %}
+			<label for="username" class="label">Username:</label>
+			<input type="text" id="username" name="username"><br><br>
+			<label for="password" class="label">Password:</label>
+			<input type="password" id="password" name="password"><br><br>
+			<input type="submit" value="Login">
+		</form>
+    </div>
+		<p class="label"><a href="#">Forgot Password?</a></p>
+		<p class="label"><a href="{% url 'cadastro'%}">Register for an Account</a></p>
+		<p class="label"><a href="{% url 'home'%}">Home</a></p>
+	</div>
+</body>
+</html>

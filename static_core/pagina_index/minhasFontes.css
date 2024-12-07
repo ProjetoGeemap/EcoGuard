@@ -1,0 +1,53 @@
+@font-face {
+    font-family: BIG;
+    src: url("fonts/bignoodletitling/big_noodle_titling.ttf");
+}
+
+@font-face {
+    font-family: Free;
+    src: url("fonts/arthead/Arthead-Regular\ FREE.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Green;
+    src: url("fonts/greenpeace/Biko_Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Home;
+    src: url("fonts/greenpeace/Biko_Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: Title;
+    src: url("fonts/title/Dolce_Vita_Light.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Energia;
+    src: url("fonts/energia/dream\ orphans.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Modern;
+    src: url("fonts/modern_sans/ModernSans-Light.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lorem;
+    src: url("fonts/lorem/Timeless.ttf");
+    font-weight: normal;
+    font-style: normal;
+}

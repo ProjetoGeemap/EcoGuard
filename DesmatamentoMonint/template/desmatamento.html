@@ -1,0 +1,110 @@
+{% extends 'base_desmatamento.html' %} {% block title %}
+<h1 class="center">Desmatamento na Bahia</h1>
+{% endblock %} {% block conteudo %}
+
+<style>
+  .paragrafo {
+    margin-top: 3%;
+    margin-bottom: 10%;
+  }
+</style>
+<div class="paragrafo"></div>
+{% endblock %} {% block container %}
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  {% for item in colection %} {% with forloop.counter as idx %}
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading{{ idx }}">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#panelsStayOpen-collapse{{ idx }}"
+        aria-expanded="true"
+        aria-controls="panelsStayOpen-collapse{{ idx }}"
+      >
+        {{ item.crossedCities|join:", " }}
+      </button>
+    </h2>
+    <div
+      id="panelsStayOpen-collapse{{ idx }}"
+      class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+      aria-labelledby="heading{{ idx }}"
+    >
+      <div class="accordion-body">
+        <strong>Código de Alerta: {{ item.alertCode }}</strong>
+        <p>Cidade: {{ item.crossedCities|join:", " }}</p>
+        <p>Bioma: {{ item.crossedBiomes|join:", " }}</p>
+        <p>Detectado em: {{ item.detectedAt }}</p>
+
+        <!-- Botão para mostrar/ocultar imagens antes e depois -->
+        <button
+          class="btn btn-primary"
+          onclick="toggleImages({{ idx }}, {{ item.alertCode }})"
+        >
+          Mostrar Antes e Depois
+        </button>
+
+        <!-- Seção de imagens antes e depois, inicialmente escondida -->
+        <div
+          id="image-section-{{ idx }}"
+          class="row mt-3 vikra"
+          style="display: none"
+        >
+          <div class="col-md-6">
+            <h5>Antes</h5>
+            <img
+              id="beforeImage-{{ idx }}"
+              src=""
+              alt="Imagem Antes"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-6">
+            <h5>Depois</h5>
+            <img
+              id="afterImage-{{ idx }}"
+              src=""
+              alt="Imagem Depois"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  {% endwith %} {% endfor %}
+</div>
+<style>
+  .vikra {
+    justify-content: space-around;
+  }
+  .accordion {
+    width: 90%;
+    margin: auto;
+  }
+</style>
+<script>
+  // Função para alternar a exibição das imagens e buscar os links via AJAX
+  function toggleImages(idx, itemId) {
+    const imageSection = document.getElementById(`image-section-${idx}`);
+
+    // Mostrar ou ocultar a seção de imagens
+    if (imageSection.style.display === "none") {
+      // Se a seção está escondida, buscar os links das imagens via AJAX
+      fetch(`/get-image-links/${itemId}/`)
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById(`beforeImage-${idx}`).src = data.beforeImage;
+          document.getElementById(`afterImage-${idx}`).src = data.afterImage;
+          imageSection.style.display = "flex";
+        })
+        .catch((error) => console.error("Erro ao buscar imagens:", error));
+    } else {
+      imageSection.style.display = "none";
+    }
+  }
+</script>
+
+{% endblock %}

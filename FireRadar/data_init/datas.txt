@@ -1,0 +1,15 @@
+
+
+#situação das queimas mes atual / mes anos passado
+#https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado/grafico_historico_mes_atual_estado_bahia.html
+
+
+#dados historicos de inendio anual do estado
+#https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media/estado/csv_estatisticas/historico_estado_bahia.csv
+
+
+#comparativo do primeiro semestre do Estado
+#https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado//grafico_comparativo_primeiro_semestre_estado_bahia.html
+
+#comparativo do segundo semestre
+#https://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/media//estado/grafico_comparativo_segundo_semestre_estado_sao_paulo.html
