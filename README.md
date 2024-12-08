@@ -34,6 +34,7 @@ pip install -r requirements.txt
 
 **⚙️ Configuração do Banco de Dados**
 Após instalar as dependências, crie as migrações do banco de dados:
+
 python manage.py makemigrations
 
 **Aplique as migrações:**
@@ -41,10 +42,11 @@ python manage.py migrate
 
 **🚀 Executar o Servidor**
 Para iniciar o servidor local, rode o comando:
+
 python manage.py runserver
 
 Acesse o sistema no navegador pelo endereço:
-http://127.0.0.1:8000/
+**http://127.0.0.1:8000/**
 
 📚 Resumo dos Comandos
 
