@@ -1,4 +1,4 @@
-🌱 EcoGuard - Sistema de Cadastro
+🌱 EcoGuard - Sistema De Monitoramento de Focos de Incêndios
 Bem-vindo ao EcoGuard! Este projeto foi desenvolvido para promover uma experiência intuitiva e fácil de gerenciar. Siga os passos abaixo para configurar e executar o projeto na sua máquina.
 
 🛠️ Pré-requisitos
@@ -28,6 +28,7 @@ Passo 3: Instalar os requisitos
 No terminal, execute o comando para instalar todas as dependências do projeto:
 
 pip install -r requirements.txt
+
 
 ⚙️ Configuração do Banco de Dados
 Após instalar as dependências, crie as migrações do banco de dados:
