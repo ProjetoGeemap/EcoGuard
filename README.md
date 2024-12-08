@@ -69,8 +69,11 @@ python manage.py migrate
 
 # Rodar o servidor
 python manage.py runserver
+
 🤝 Contribuições
+
 Sinta-se à vontade para contribuir com melhorias para o projeto! Abra uma issue ou envie um pull request com sua sugestão.
 
 📝 Licença
+
 Este projeto é distribuído sob a licença MIT.
