@@ -1,4 +1,5 @@
-🌱 EcoGuard - Sistema De Monitoramento de Focos de Incêndios
+**🌱 EcoGuard - Sistema De Monitoramento de Focos de Incêndios**
+
 Bem-vindo ao EcoGuard! Este projeto foi desenvolvido para promover uma experiência intuitiva e fácil de gerenciar. Siga os passos abaixo para configurar e executar o projeto na sua máquina.
 
 🛠️ Pré-requisitos
