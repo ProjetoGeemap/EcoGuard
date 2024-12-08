@@ -8,6 +8,7 @@ Python 3.8+
 Pip
 
 📦 Instalação
+
 Passo 1: Baixar o projeto
 Faça o download do arquivo ZIP clicando no botão Code > Download ZIP no repositório ou no link fornecido.
 Extraia o conteúdo do ZIP para uma pasta de sua escolha.
