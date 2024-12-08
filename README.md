@@ -64,6 +64,7 @@ pip install -r requirements.txt
 
 # Migrar banco de dados
 python manage.py makemigrations
+
 python manage.py migrate
 
 # Rodar o servidor
