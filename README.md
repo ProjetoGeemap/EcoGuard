@@ -11,11 +11,10 @@ Pip
 Passo 1: Baixar o projeto
 Faça o download do arquivo ZIP clicando no botão Code > Download ZIP no repositório ou no link fornecido.
 Extraia o conteúdo do ZIP para uma pasta de sua escolha.
+
 Passo 2: Configurar o ambiente virtual
 Abra o terminal na pasta extraída.
 Crie um ambiente virtual executando o comando:
-bash
-Copiar código
 python -m venv venv
 Ative o ambiente virtual:
 Windows:
