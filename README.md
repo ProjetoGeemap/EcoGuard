@@ -14,17 +14,16 @@ Pip
 Faça o download do arquivo ZIP clicando no botão Code > Download ZIP no repositório ou no link fornecido.
 Extraia o conteúdo do ZIP para uma pasta de sua escolha.
 
-**Passo 2:** Configurar o ambiente virtual
-Abra o terminal na pasta extraída.
-Crie um ambiente virtual executando o comando:
+**Passo 2:** Configurar o ambiente virtual. Abra o terminal na pasta extraída e Crie um ambiente virtual executando o comando:
 
 python -m venv venv
 
-Ative o ambiente virtual:
-Windows:
+**Ative o ambiente virtual:**
+
+**Windows:**
 call venv\Scripts\activate
 
-Mac/Linux:
+**Mac/Linux:**
 source venv/bin/activate
 
 **Passo 3:** Instalar os requisitos
