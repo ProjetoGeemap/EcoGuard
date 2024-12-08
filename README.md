@@ -18,45 +18,37 @@ Crie um ambiente virtual executando o comando:
 python -m venv venv
 Ative o ambiente virtual:
 Windows:
-bash
-Copiar código
-venv\Scripts\activate
+call venv\Scripts\activate
+
 Mac/Linux:
-bash
-Copiar código
 source venv/bin/activate
+
 Passo 3: Instalar os requisitos
 No terminal, execute o comando para instalar todas as dependências do projeto:
 
-bash
-Copiar código
 pip install -r requirements.txt
+
 ⚙️ Configuração do Banco de Dados
 Após instalar as dependências, crie as migrações do banco de dados:
-bash
-Copiar código
 python manage.py makemigrations
+
 Aplique as migrações:
-bash
-Copiar código
 python manage.py migrate
+
 🚀 Executar o Servidor
 Para iniciar o servidor local, rode o comando:
-bash
-Copiar código
 python manage.py runserver
+
 Acesse o sistema no navegador pelo endereço:
-arduino
-Copiar código
 http://127.0.0.1:8000/
+
 📚 Resumo dos Comandos
-bash
-Copiar código
+
 # Criar ambiente virtual
 python -m venv venv
 
 # Ativar ambiente virtual (Windows)
-venv\Scripts\activate
+call venv\Scripts\activate
 
 # Ativar ambiente virtual (Mac/Linux)
 source venv/bin/activate
