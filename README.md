@@ -17,7 +17,9 @@ Extraia o conteúdo do ZIP para uma pasta de sua escolha.
 **Passo 2:** Configurar o ambiente virtual
 Abra o terminal na pasta extraída.
 Crie um ambiente virtual executando o comando:
+
 python -m venv venv
+
 Ative o ambiente virtual:
 Windows:
 call venv\Scripts\activate
